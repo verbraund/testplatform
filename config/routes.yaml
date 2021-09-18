@@ -1,0 +1,128 @@
+index:
+    path: /
+    controller: App\Controller\Site\HomeController::index
+
+calculator_sum:
+    path: /api/sum/{a}/{b}
+    controller: App\Controller\Api\CalculatorController::sum
+    methods: GET
+    defaults:
+      _format: .txt
+    requirements:
+      a: '\d+'
+      b: '\d+'
+
+calculator_sum_format:
+    path: /api/sum/{a}/{b}.{_format}
+    controller: App\Controller\Api\CalculatorController::sum
+    methods: GET
+    defaults:
+      _format: .txt|.json|.xml
+    requirements:
+      a: '\d+'
+      b: '\d+'
+
+calculator_minus:
+  path: /api/minus/{a}/{b}
+  controller: App\Controller\Api\CalculatorController::minus
+  methods: GET
+  requirements:
+    a: '\d+'
+    b: '\d+'
+
+calculator_minus_format:
+  path: /api/minus/{a}/{b}.{_format}
+  controller: App\Controller\Api\CalculatorController::minus
+  methods: GET
+  defaults:
+    _format: .txt|.json|.xml
+  requirements:
+    a: '\d+'
+    b: '\d+'
+
+calculator_randoms:
+  path: /api/randoms/{count}/{min}/{max}
+  controller: App\Controller\Api\CalculatorController::random
+  methods: GET
+  defaults:
+    count: 1
+    min: null
+    max: null
+  requirements:
+    count: '\d+'
+    min: '\d+'
+    max: '\d+'
+
+calculator_randoms_format_1:
+  path: /api/randoms/{count}.{_format}
+  controller: App\Controller\Api\CalculatorController::random
+  methods: GET
+  defaults:
+    _format: .txt|.json|.xml
+    count: 1
+    min: null
+    max: null
+  requirements:
+    count: '\d+'
+    min: '\d+'
+    max: '\d+'
+
+calculator_randoms_format_2:
+  path: /api/randoms/{count}/{min}.{_format}
+  controller: App\Controller\Api\CalculatorController::random
+  methods: GET
+  defaults:
+    _format: .txt|.json|.xml
+    count: 1
+    min: null
+    max: null
+  requirements:
+    count: '\d+'
+    min: '\d+'
+    max: '\d+'
+
+calculator_randoms_format_3:
+  path: /api/randoms/{count}/{min}/{max}.{_format}
+  controller: App\Controller\Api\CalculatorController::random
+  methods: GET
+  defaults:
+    _format: .txt|.json|.xml
+    count: 1
+    min: null
+    max: null
+  requirements:
+    count: '\d+'
+    min: '\d+'
+    max: '\d+'
+
+calculator_randoms_format:
+  path: /api/randoms/{count}/{min}/{max}.{_format}
+  controller: App\Controller\Api\CalculatorController::random
+  methods: GET
+  defaults:
+    _format: .txt|.json|.xml
+    count: 1
+    min: null
+    max: null
+  requirements:
+    count: '\d+'
+    min: '\d+'
+    max: '\d+'
+
+
+user_all:
+  path: /api/users
+  controller: App\Controller\Api\UserController::index
+  methods: GET
+
+user_current:
+  path: /api/users/{id}
+  controller: App\Controller\Api\UserController::show
+  methods: GET
+  requirements:
+    id: '\d+'
+
+user_create:
+  path: /api/users
+  controller: App\Controller\Api\UserController::store
+  methods: POST

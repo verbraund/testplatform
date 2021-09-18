@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test platform{% endblock %}
+
+{% block body %}
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col pt-5">
+                <table class="table table-striped table-hover">
+                    <tbody>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td colspan="2">GET /api/sum/{a}/{b}</td>
+                        <td>Суммирование</td>
+                        <td><a target="_blank" href="/api/sum/1/1">перейти</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td colspan="2">GET /api/minus/{a}/{b}</td>
+                        <td>Вычитание</td>
+                        <td><a target="_blank" href="/api/minus/3/1">перейти</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">GET /api/randoms/{count}/{min}/{max}</td>
+                        <td>Рандом</td>
+                        <td><a target="_blank" href="/api/randoms/1/1/100">перейти</a></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">4</th>
+                        <td colspan="2">GET /api/users</td>
+                        <td>Все пользователи</td>
+                        <td><a target="_blank" href="/api/users">перейти</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td colspan="2">GET /api/users/{id}</td>
+                        <td>Конкретный пользователь</td>
+                        <td><a target="_blank" href="/api/users/1">перейти</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>POST /api/users</td>
+                        <td>{"name":"lena","email":"test@mail.com"}</td>
+                        <td>Создать пользователя</td>
+                        <td><a target="_blank" href="/api/users">перейти</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
